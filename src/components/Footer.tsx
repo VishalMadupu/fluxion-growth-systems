@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/fluxion_logo.png";
 
 const Footer = () => {
   return (
@@ -6,7 +7,10 @@ const Footer = () => {
       <div className="container-main">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <h3 className="text-xl font-bold text-gradient mb-3">Fluxion</h3>
+            <div className="flex items-center gap-2 mb-3">
+              <img src={logo} alt="Fluxion" className="h-8 w-auto" />
+              <h3 className="text-xl font-bold text-gradient">Fluxion</h3>
+            </div>
             <p className="text-muted-foreground text-sm max-w-sm">
               Engineering scalable digital experiences. We build high-performance platforms that drive real business growth.
             </p>
