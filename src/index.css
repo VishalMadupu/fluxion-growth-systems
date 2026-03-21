@@ -6,48 +6,48 @@
 
 @layer base {
   :root {
-    --background: 222 47% 7%;
+    --background: 215 50% 7%;
     --foreground: 0 0% 100%;
 
-    --card: 222 47% 11%;
+    --card: 215 50% 11%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 222 47% 11%;
+    --popover: 215 50% 11%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 217 91% 53%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 185 72% 48%;
+    --primary-foreground: 215 50% 7%;
 
-    --secondary: 222 47% 14%;
+    --secondary: 215 50% 14%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 222 30% 18%;
-    --muted-foreground: 218 11% 65%;
+    --muted: 215 30% 18%;
+    --muted-foreground: 200 15% 60%;
 
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 195 80% 55%;
+    --accent-foreground: 215 50% 7%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 100% / 0.08;
     --input: 0 0% 100% / 0.08;
-    --ring: 217 91% 53%;
+    --ring: 185 72% 48%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 222 47% 7%;
+    --sidebar-background: 215 50% 7%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 217 91% 53%;
+    --sidebar-primary: 185 72% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 47% 14%;
+    --sidebar-accent: 215 50% 14%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 0 0% 100% / 0.08;
-    --sidebar-ring: 217 91% 53%;
+    --sidebar-ring: 185 72% 48%;
 
     /* Custom tokens */
-    --glow-primary: 0 0 30px hsla(217, 91%, 53%, 0.3);
-    --glass-bg: hsla(222, 47%, 11%, 0.6);
+    --glow-primary: 0 0 30px hsla(185, 72%, 48%, 0.3);
+    --glass-bg: hsla(215, 50%, 11%, 0.6);
     --glass-border: rgba(255, 255, 255, 0.08);
   }
 }
