@@ -1,0 +1,43 @@
+import Section from "@/components/Section";
+import GlassCard from "@/components/GlassCard";
+import { ExternalLink } from "lucide-react";
+
+const projects = [
+  { title: "AI Workflow Platform", category: "Web App", desc: "Intelligent automation platform with real-time dashboards and ML-powered insights." },
+  { title: "E-commerce System", category: "E-commerce", desc: "Full-featured storefront with multi-currency support and advanced analytics." },
+  { title: "SaaS Dashboard", category: "Web App", desc: "Enterprise analytics dashboard with real-time data visualization and role-based access." },
+  { title: "Brand Identity Platform", category: "Creative", desc: "Digital asset management system with automated brand guideline enforcement." },
+];
+
+const Portfolio = () => {
+  return (
+    <div className="pt-16">
+      <Section
+        title="Our Work"
+        subtitle="A selection of projects that showcase our engineering excellence."
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((p, i) => (
+            <GlassCard key={p.title} delay={i * 0.1} className="group cursor-pointer">
+              <div className="h-48 rounded-lg bg-secondary/50 mb-6 flex items-center justify-center overflow-hidden">
+                <div className="text-muted-foreground/30 text-6xl font-bold">
+                  {p.title.charAt(0)}
+                </div>
+              </div>
+              <div className="flex items-start justify-between">
+                <div>
+                  <span className="text-xs font-medium text-primary uppercase tracking-wider">{p.category}</span>
+                  <h3 className="text-lg font-semibold mt-1 mb-2">{p.title}</h3>
+                  <p className="text-muted-foreground text-sm">{p.desc}</p>
+                </div>
+                <ExternalLink className="text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-4" size={18} />
+              </div>
+            </GlassCard>
+          ))}
+        </div>
+      </Section>
+    </div>
+  );
+};
+
+export default Portfolio;
