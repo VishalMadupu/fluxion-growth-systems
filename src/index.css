@@ -101,7 +101,7 @@
   .glow-button::after {
     content: '';
     @apply absolute inset-0 opacity-0 transition-opacity duration-300;
-    background: radial-gradient(circle at center, hsla(217, 91%, 53%, 0.4), transparent 70%);
+    background: radial-gradient(circle at center, hsla(185, 72%, 48%, 0.4), transparent 70%);
   }
 
   .glow-button:hover::after {
