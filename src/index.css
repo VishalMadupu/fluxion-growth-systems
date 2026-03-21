@@ -79,7 +79,7 @@
   .glass-card-hover:hover {
     transform: translateY(-4px);
     box-shadow: var(--glow-primary);
-    border-color: hsla(217, 91%, 53%, 0.3);
+    border-color: hsla(185, 72%, 48%, 0.3);
   }
 
   .section-padding {
