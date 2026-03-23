@@ -3,14 +3,37 @@ import { motion } from "framer-motion";
 import Section from "@/components/Section";
 import { Send } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", type: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! We'll get back to you soon.");
-    setForm({ name: "", email: "", type: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          project_type: form.type,
+          message: form.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      toast.success("Message sent! We'll get back to you soon.");
+      setForm({ name: "", email: "", type: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -90,9 +113,10 @@ const Contact = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-primary text-primary-foreground py-3.5 rounded-xl font-medium text-sm hover:bg-primary/90 transition-all glow-button flex items-center justify-center gap-2"
+              disabled={isSubmitting}
+              className="w-full bg-primary text-primary-foreground py-3.5 rounded-xl font-medium text-sm hover:bg-primary/90 transition-all glow-button flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message <Send size={16} />
+              {isSubmitting ? "Sending..." : "Send Message"} <Send size={16} />
             </button>
           </motion.form>
         </div>
