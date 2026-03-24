@@ -28,9 +28,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-sm mb-4">Connect</h4>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <span>hello@fluxion.dev</span>
-              <span>LinkedIn</span>
-              <span>Twitter / X</span>
+              <a href="mailto:fluxionwebsolution@gmail.com" className="hover:text-primary transition-colors">fluxionwebsolution@gmail.com</a>
+              <a href="https://www.linkedin.com/company/fluxionwebsolutions/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
             </div>
           </div>
         </div>
